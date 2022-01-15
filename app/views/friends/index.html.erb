@@ -1,0 +1,18 @@
+<% if user_signed_in? %>
+<h1>Friends</h1>
+
+<div id="friends">
+  <% @friends.each do |friend| %>
+    <%= render friend %>
+    <p>
+      <%= link_to "Show this friend", friend %>
+      <%= button_to "Destroy this friend", @friend, method: :delete,class:'btn btn-dark' %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New friend", new_friend_path %>
+
+<% else %>
+<h3>Assignment for Internship at Flexiple.</h3>
+<% end %>
